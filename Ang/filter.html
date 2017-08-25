@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<body>
+
+    <div ng-app="myApp" ng-controller="personCtrl">
+
+        <p>
+
+            The first name is {{ firstName | uppercase }} <br> The last name is {{ lastName | lowercase }}</p>
+
+        <p>Looping with objects:</p>
+        <ul>
+            <li ng-repeat="x in names | orderBy:'country'">
+                {{ x.name + ', ' + x.country }}
+            </li>
+        </ul>
+
+        <p> The price is {{price | currency}} </p>
+
+
+        <p>Filtering the objects:</p>
+        <ul>
+            <li ng-repeat="x in names | filter : country='Denmark' ">
+                {{ x.name + ', ' + x.country }}
+            </li>
+        </ul>
+
+
+
+        <p>Type a letter in the input field:</p>
+
+        <p><input type="text" ng-model="test"></p>
+
+        <ul>
+            <li ng-repeat="x in names1 | filter:test">
+                {{ x }}
+            </li>
+        </ul>
+
+
+        <table border="1" width="100%">
+            <tr>
+                <th ng-click="orderByMe('name')">Name</th>
+                <th ng-click="orderByMe('country')">Country</th>
+            </tr>
+            <tr ng-repeat="x in names | orderBy:myOrderBy">
+                <td>{{x.name}}</td>
+                <td>{{x.country}}</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <script>
+        angular.module('myApp', []).controller('personCtrl', function($scope) {
+            $scope.firstName = "John",
+                $scope.lastName = "Doe",
+
+                $scope.names = [{
+                    name: 'Jani',
+                    country: 'Norway'
+                }, {
+                    name: 'Carl',
+                    country: 'Sweden'
+                }, {
+                    name: 'Margareth',
+                    country: 'England'
+                }, {
+                    name: 'Hege',
+                    country: 'Norway'
+                }, {
+                    name: 'Joe',
+                    country: 'Denmark'
+                }, {
+                    name: 'Gustav',
+                    country: 'Sweden'
+                }, {
+                    name: 'Birgit',
+                    country: 'Denmark'
+                }, {
+                    name: 'Mary',
+                    country: 'England'
+                }, {
+                    name: 'Kai',
+                    country: 'Norway'
+                }];
+
+
+            $scope.price = 58;
+
+
+            $scope.names1 = [
+                'Jani',
+                'Carl',
+                'Margareth',
+                'Hege',
+                'Joe',
+                'Gustav',
+                'Birgit',
+                'Mary',
+                'Kai'
+            ];
+
+            $scope.orderByMe = function(x) {
+                $scope.myOrderBy = x;
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>

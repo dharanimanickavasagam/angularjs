@@ -1,0 +1,19 @@
+<html ng-app="twowaymodule">
+
+<head>
+    <title> 2 way data binding </title>
+
+    <script src="angular.js">
+    </script>
+    <script src="twoway.js">
+    </script>
+</head>
+
+<body ng-controller="myctrl">
+    <input ng-model="username" type="textbox" value="" id="tb" /> <br>
+    <input type="button" ng-click="twowayctrl()" value="Submit"> </input>
+
+    <p> Your name is {{username}}</p>
+</body>
+
+</html>

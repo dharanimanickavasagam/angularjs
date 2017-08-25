@@ -1,0 +1,44 @@
+<html ng-app="mymodule">
+
+<head>
+    <title> Nested Controllers </title>
+    <script src="angular.js">
+    </script>
+    <script src="app.js">
+    </script>
+</head>
+
+<body>
+
+
+    <div ng-controller="mycontroller1">
+        <p> Data comes from the scope obj of the ctrl1 : {{test}} </p>
+    </div>
+
+    <div ng-controller="mycontroller2">
+        <p> {{test}} </p>
+    </div>
+
+    <div ng-init="test=10">
+        <p> Data comes from the default global scope object : {{test}} </p>
+    </div>
+
+
+    <!-- Hello, I am not executing  
+    Scope Hierarchy
+    Parent controller, Sub controller, Global controller
+    When there are so many controllers there will be so much confusion to tie the HTML elements-->
+
+
+    <div ng-controller="mycontroller1">
+        <p> Data comes from the scope obj of the ctrl1 : {{test}} </p>
+
+
+        <div ng-controller="mycontroller2">
+            <p> {{test}} </p>
+        </div>
+
+
+</body>
+
+</html>

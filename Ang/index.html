@@ -1,0 +1,22 @@
+<html ng-app>
+
+<head>
+    <script src="angular.js">
+    </script>
+</head>
+
+
+<body ng-init="hourofday = 1">
+    <h1> Hello Dharani </h1>
+
+    <p ng-if="hourofday < 12"> good morning </p>
+
+    <p ng-if="hourofday > 17"> good evening </p>
+    <p>The hour of day is <span ng-bind="hourofday"> </span> </p>
+    <p>The hour of day is <span ng-bind="hourofday + 9"> </span> </p>
+    <p ng-bind="hourofday">The hour of day is </p>
+    <p>The hour of day is {{hourofday}} </p>
+
+</body>
+
+</html>

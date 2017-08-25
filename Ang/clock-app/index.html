@@ -1,0 +1,28 @@
+<html ng-app="myApp">
+
+<head>
+    <script src="angular.js">
+    </script>
+    <script src="clock.js">
+    </script>
+</head>
+
+
+<body>
+
+    <div ng-controller="MainCtrl">
+        <h1> Hello Dharani </h1>
+
+        <p>The Date of day is {{date}} </p>
+        <button ng-click="update()"> Update </button>
+        <br>I am executed :
+        <p ng-bind="date"></p>
+
+    </div>
+
+    I am not executed : ???
+    <p ng-bind="date" />
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<html ng-app="mymodule">
+
+<head>
+    <title> More Directives </title>
+    <script src="angular.js">
+    </script>
+    <script src="app.js">
+    </script>
+</head>
+
+<body>
+
+    <div ng-controller="myctrl as ctrl">
+        <input type="checkbox" id="cb" ng-model="ctrl.checked">
+        <p ng-show="ctrl.checked"> From ng-show </p>
+        <p ng-hide="ctrl.checked"> From ng-hide</p>
+        <p ng-hide="!ctrl.checked"> From !ng-hide</p>
+        <p ng-if="ctrl.checked"> From ng-if</p>
+
+        {{ctrl.checked}}
+
+        <!-- 
+            ng-if creates a new node in the DOM if its true, else deletes the node from the DOM
+            ng-show and ng-hide always have a node in the DOM
+        -->
+    </div>
+
+</body>
+
+</html>

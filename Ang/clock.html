@@ -1,0 +1,31 @@
+<html ng-app="myApp">
+
+<head>
+    <script src="angular.js">
+    </script>
+</head>
+
+
+<body>
+
+    <div ng-controller="MainCtrl">
+        <h1> Hello Dharani </h1>
+
+        <p>The Date of day is {{date}} </p>
+    </div>
+
+    <script>
+        var module = angular.module("myApp", []);
+        module.controller("MainCtrl", Main);
+
+
+        function Main($scope) {
+            $scope.date = Date();
+            console.log("main called");
+        }
+    </script>
+
+
+</body>
+
+</html>

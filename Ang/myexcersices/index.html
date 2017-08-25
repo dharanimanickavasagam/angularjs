@@ -1,0 +1,20 @@
+<html ng-app="mymodule">
+
+<head>
+    <title> Factorial </title>
+    <script src="angular.js">
+    </script>
+    <script src="app.js">
+    </script>
+</head>
+
+
+<body>
+    <h1> Factorial of n </h1>
+    <div ng-controller="myctrl as c">
+        <input type="text" ng-model="c.number" value="" />
+        <input type="button" ng-click="c.compute()" value="Compute" /> <br> Factorial of {{c.number}} is <span ng-bind="c.result"> </span>
+    </div>
+</body>
+
+</html>

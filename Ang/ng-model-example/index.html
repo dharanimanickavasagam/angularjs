@@ -1,0 +1,34 @@
+<html ng-app="mymodule">
+
+<head>
+    <script src="angular.js">
+    </script>
+    <script src="app.js">
+    </script>
+
+</head>
+
+
+<body ng-controller="myctrl">
+    <p> Textbox : <input type="textbox" ng-model="textstring" ng-change="change()" value="" id="tb" /> </p>
+    <p> Textbox : <input type="textbox" ng-model="textstring" ng-change="change()" value="" id="tb" /> </p>
+    <p> Textbox : <input type="textbox" ng-model="textstring" ng-change="change()" value="" id="tb" /> </p>
+
+
+    <p> Checkbox : <input type="checkbox" ng-model="booleanvalue" /> </p>
+    <p> Date : <input type="date" ng-model="date" /> </p>
+    <p> Radio : <input type="radio" ng-model="option" value="1" /> A
+        <input type="radio" ng-model="option" value="2" /> B
+        <input type="radio" ng-model="option" value="3" /> C </p>
+
+    <div>
+        <p> Text Input is :
+            <font size=50> {{textstring}} </font>
+        </p>
+        <p> Checkbox value is : {{booleanvalue}} </p>
+        <p> Date is : {{date}} </p>
+        <p> Radio Button value is : {{option}} </p>
+    </div>
+</body>
+
+</html>
